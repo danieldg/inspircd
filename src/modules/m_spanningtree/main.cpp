@@ -552,7 +552,7 @@ void ModuleSpanningTree::OnUserJoin(Membership* memb, bool sync, bool created, C
 		{
 			params.push_back("*");
 		}
-		params.push_back(memb->modes+","+std::string(memb->user->uuid));
+		params.push_back(":"+memb->modes+","+std::string(memb->user->uuid));
 		Utils->DoOneToMany(ServerInstance->Config->GetSID(),"FJOIN",params);
 	}
 }
